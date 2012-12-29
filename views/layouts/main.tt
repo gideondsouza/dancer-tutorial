@@ -11,6 +11,11 @@
      <% IF not session.logged_in %>
        <a href="<% login_url %>">log in</a>
      <% ELSE %>
+ 		<!-- We'll show the username we have in our session object. -->
+		<p>Hello, <% session.username %> from GitHub
+		<!-- We also stored the avatar url in the session so we'll use that here -->
+			<img src='<% session.avatar %>' alt='avatar' />			
+		<p>
        <a href="<% logout_url %>">log out</a>
      <% END %>
   </div>
